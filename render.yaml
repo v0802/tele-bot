@@ -1,9 +1,9 @@
 services:
-  - type: worker
-    name: telegram-force-join-bot
-    env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python bot.py"
+  - type: web
+    name: telegram-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
     envVars:
       - key: BOT_TOKEN
         sync: false
@@ -11,3 +11,6 @@ services:
         sync: false
       - key: BACKUP_GROUP_ID
         sync: false
+    build:
+      environment:
+        PYTHON_VERSION: 3.11.8
