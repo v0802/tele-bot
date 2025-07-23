@@ -11,6 +11,3 @@ services:
         sync: false
       - key: BACKUP_GROUP_ID
         sync: false
-    build:
-      environment:
-        PYTHON_VERSION: 3.11.8
